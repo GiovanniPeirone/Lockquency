@@ -7,4 +7,7 @@
 ## Design 
     - Figma
 
-
+## Programing Lenguajes
+    - C/C++ --> Drivers, Ia
+    - Python --> IA
+    
