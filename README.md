@@ -27,3 +27,22 @@ the ia needs to recognise the sound in 1 or 5 second so the saples of data cant 
 ## Step 2
     - Make the algorithm to train the IA
 
+
+# Tareas
+
+## tarea 1 
+crear una funcion que sea capaz de prosesar un audio y que devuelva un xml con sus patrones mas repetidos
+la etiqueta tiene que tener el nombre de el "objeto" del caul probiene el sonido.
+
+## tarea 2
+crear una funcion la cual sea capas de sacar la estadistica de pattronse entre nuevos sonidos vajo la misma etiqueta del "objeto"
+
+## tarea 3
+crear una funcion la cual sea capaz de utilizar los patrones generales de todos los sonidos para sacar daos vvalores x, y en el cual el "objeto" se va a posicionar 
+
+## tarea 4
+crear una funcion la cual sea capaz de detectar los patronse mas repetidos de un sonido y que ddetecte la posicion x, y en la que tiene que ir, y que luego detecte cual es el otro vector mas sercano
+
+el vector mas sercano deria ser el objeto que se busca detectar.
+
+
