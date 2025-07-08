@@ -1,0 +1,39 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Página-1" id="qGECcb1BCLIfGjbtH7t1">
+    <mxGraphModel dx="1206" dy="945" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZGg02q_mU367QFoYSOzO-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZGg02q_mU367QFoYSOzO-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-1" value="input&lt;div&gt;sonido + nombre de objeto&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZGg02q_mU367QFoYSOzO-7" target="ZGg02q_mU367QFoYSOzO-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-7" value="Detecta los ptarones del sonido" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="45" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZGg02q_mU367QFoYSOzO-11" target="ZGg02q_mU367QFoYSOzO-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-11" value="GRafica los patrones enuna grafica" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="414" y="185" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZGg02q_mU367QFoYSOzO-13" target="ZGg02q_mU367QFoYSOzO-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-13" value="se comparan los valores en la graficas con demas valores bajo el mismo nombre de objeto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="371" y="330" width="206" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="ZGg02q_mU367QFoYSOzO-17" value="Se&amp;nbsp; grafica una idea de sonido de objeto general en base a los patrones de todos los sonidos" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="311" y="552.5" width="326" height="137.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
