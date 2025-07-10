@@ -2,10 +2,9 @@
 #ifndef AUDIO_PROSESOR;
 #define AUDIO_PROSESOR;
 
-class audio_patrons{
-public:
-    audio_patrons();
-    int audio_prosesor();
-};
+#include <vector>
+using namespace std;
+
+vector<double> GetAudioPatternsXY(); 
 
 #endif
