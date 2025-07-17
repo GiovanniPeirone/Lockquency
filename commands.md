@@ -1,0 +1,1 @@
+sudo apt-get install curl cmake clang pulseaudio libasound-dev libjack-dev
