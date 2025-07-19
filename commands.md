@@ -6,5 +6,6 @@
 
 sudo apt-get install curl cmake clang pulseaudio libasound-dev libjack-dev libsndfile1-dev 
 
+sudo apt install ffmpeg
 
 

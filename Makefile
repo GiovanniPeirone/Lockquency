@@ -5,7 +5,7 @@ SRC = src-core/main.cpp
 
 COMPILED_FILE = Lky
 
-CLIB = -I./lib/portaudio/include ./lib/portaudio/lib/.libs/libportaudio.a -lrt -lasound -ljack -pthread
+CLIB = -I./lib/portaudio/include ./lib/portaudio/lib/.libs/libportaudio.a -lrt -lasound -lsndfile -ljack -pthread
 OUT_DIR = bin
 TARGET = $(OUT_DIR)/$(COMPILED_FILE)
 

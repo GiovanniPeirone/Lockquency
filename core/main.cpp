@@ -33,7 +33,7 @@ int main() {
 
     AudioData data;
     data.sfinfo.format = 0;
-    data.file = sf_open("../data/sounds/cats/cat0.mp3", SFM_READ, &data.sfinfo);
+    data.file = sf_open("data/sounds/cats/cat3.wav", SFM_READ, &data.sfinfo);
     if (!data.file) {
         std::cerr << "Error abriendo archivo de audio\n";
         return 1;
