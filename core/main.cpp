@@ -31,31 +31,53 @@ static int paCallback(const void* inputBuffer, void* outputBuffer,
 int main() {
     Pa_Initialize();
 
+    int medias[4];
+
     AudioData data;
-    data.sfinfo.format = 0;
-    data.file = sf_open("data/sounds/cats/cat3.wav", SFM_READ, &data.sfinfo);
-    if (!data.file) {
-        std::cerr << "Error abriendo archivo de audio\n";
-        return 1;
+    for (int i = 0; i <= 3; i++)
+    {
+        data.sfinfo.format = 0;
+
+        std::string path = "data/sounds/cats/cat" + std::to_string(i) + ".wav";
+        
+        data.file = sf_open(path.c_str(), SFM_READ, &data.sfinfo);
+        if (!data.file)
+        {
+            std::cerr << "Error abriendo archivo de audio\n";
+            return 1;
+        }
+
+        std::cout << data.sfinfo.samplerate << "\n";
+        medias[i] += data.sfinfo.samplerate;
+
+
+        PaStream *stream;
+        Pa_OpenDefaultStream(&stream,
+                             0,                    // No input
+                             data.sfinfo.channels, // Output channels
+                             paFloat32,
+                             data.sfinfo.samplerate,
+                             FRAMES_PER_BUFFER,
+                             paCallback,
+                             &data);
+        Pa_StartStream(stream);
+        while (Pa_IsStreamActive(stream))
+            Pa_Sleep(100);
+        Pa_StopStream(stream);
+        Pa_CloseStream(stream);
+
+        sf_close(data.file);
     }
 
-    PaStream* stream;
-    Pa_OpenDefaultStream(&stream,
-                         0,                        // No input
-                         data.sfinfo.channels,     // Output channels
-                         paFloat32,
-                         data.sfinfo.samplerate,
-                         FRAMES_PER_BUFFER,
-                         paCallback,
-                         &data);
+    std::cout << "----------------Media----------------------\n";
+    int media = 0;
+    for(int i = 0; i <= 3; i++){
+        media += medias[i];
+    }
 
-    Pa_StartStream(stream);
-    while (Pa_IsStreamActive(stream)) Pa_Sleep(100);
-    Pa_StopStream(stream);
-    Pa_CloseStream(stream);
+    media = media / 4;
+    std::cout << "media es: "<< media << "hz\n";
 
-    sf_close(data.file);
     Pa_Terminate();
     return 0;
 }
-
