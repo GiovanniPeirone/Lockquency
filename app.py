@@ -1,8 +1,91 @@
 import librosa
 import numpy as np
 import sounddevice as sd
+import json
+import os
 
-from audio_procesor import AudioProcessor 
+from audio_procesor import AudioFolderList, AudioData, AudioMaxAmp, AudioMinAmp
+
+def training():
+    json_data_path = "./data/procesed/"
+    path = "./data/sounds/dogs/"
+    sound_object = "dog" 
+
+    # x = Max
+    # y = Min
+    x = 0
+    y = 0
+    mediaX = 0
+    mediaY = 0
+
+    audio_list = AudioFolderList(path)
+
+    for i in audio_list:
+        #data = AudioData(path + i)
+        print(path + i)
+        
+        x = AudioMaxAmp(path + i)
+        print(f"Min : {x}")
+        
+        y = AudioMinAmp(path + i)
+        print(f"Max : {y}")
+
+        mediaX += x
+        mediaY += y
+
+        print("-------------------------------------------------")
+
+    print("---------------listo---------------")
+
+    print(f"Media de Aplitud MIN : {mediaY / len(audio_list)}")
+    print(f"Media de Aplitud MAX : {mediaX / len(audio_list)}")
+
+
+    data_json = {
+        sound_object : {
+            "y" : str(mediaY),
+            "x" : str(mediaX)
+        },
+    }
+
+    json_file = os.path.join(json_data_path, "data_object.json")
+
+
+    # Ruta del archivo JSON
+    json_file = os.path.join(json_data_path, "data_object.json")
+
+    # Leer JSON existente o crear uno nuevo si no existe
+    if os.path.exists(json_file):
+        with open(json_file, "r", encoding="utf-8") as archivo:
+            try:
+                data_json = json.load(archivo)
+            except json.JSONDecodeError:
+                data_json = {}
+    else:
+        data_json = {}
+
+    # Actualizar o agregar el objeto
+    data_json[sound_object] = {
+        "y": str(mediaY),
+        "x": str(mediaX)
+    }
+
+    # Guardar cambios
+    with open(json_file, "w", encoding="utf-8") as archivo:
+        json.dump(data_json, archivo, indent=4, ensure_ascii=False)
+
+    print(f"✅ Datos guardados/actualizados en {json_file}")
+
+def testing():
+    json_data_path = "./data/procesed/"
+    path = "./data/sounds/dogs/"
+    sound_object = "dog" 
+
+if __name__ == '__main__':
+    #training()
+    testing()
+    exit()
+
 
 """
 y, sr = librosa.load("./data/sounds/cats/cat0.wav", sr=None)
@@ -59,12 +142,6 @@ sd.wait()
 
 
 """
-
-def main():
-    AudioProcessor("./data/sounds/cats/", "cat")
-if __name__ == '__main__':
-    main()
-    exit()
 
 """
 
