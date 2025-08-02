@@ -8,6 +8,4 @@
     - Figma
 
 ## Programing Lenguajes
-    - C/C++ --> Drivers, Ia
-        - portaudio --> for audio processing
-    
+   
