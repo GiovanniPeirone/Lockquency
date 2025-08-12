@@ -78,8 +78,16 @@ def training():
 
 def testing():
     json_data_path = "./data/procesed/"
-    path = "./data/sounds/dogs/"
+    path_test_sounds = "./data/test/"
     sound_object = "dog" 
+
+    audio = AudioFolderList(path_test_sounds + sound_object)
+
+    x = AudioMaxAmp((path_test_sounds + sound_object) + audio)
+    print(f"Min : {x}")
+        
+    y = AudioMinAmp((path_test_sounds + sound_object) + audio)
+    print(f"Max : {y}")
 
 if __name__ == '__main__':
     #training()
